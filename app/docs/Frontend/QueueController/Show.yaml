@@ -1,0 +1,35 @@
+summary: 個人訂位資訊
+description: 個人訂位資訊
+operationId: api.queues.show
+parameters:
+  - in: path
+    name: code
+    schema:
+      type: string
+    required: true
+    description: 混和加密編號
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            seat:
+              type: integer
+              description: 座位數
+            your_number:
+              type: integer
+              description: 你的號碼
+            current_number:
+              type: integer
+              description: 現在號碼
+            queue_count:
+              type: integer
+              description: 前面排隊人數
+          example:
+            seat: 2
+            your_number: 30
+            current_number: 10
+            queue_count: 20

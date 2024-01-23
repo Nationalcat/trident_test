@@ -1,0 +1,17 @@
+tags:
+  - Frontend API
+summary: 訂位首頁
+description: 訂位首頁
+operationId: api.queues.index
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            seat: 2
+            current_number: 2
+            latest_number: 10
+            queue_count: 8

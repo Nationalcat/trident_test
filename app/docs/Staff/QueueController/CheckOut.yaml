@@ -1,0 +1,14 @@
+summary: 離席
+description: 離席
+operationId: api.staff.queues.check-out
+parameters:
+  - in: path
+    name: id
+    schema:
+      type: integer
+    required: true
+    description: 桌子編號
+responses:
+  '200':
+    description: ok
+

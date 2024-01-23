@@ -1,0 +1,46 @@
+tags:
+  - Staff API
+summary: 訂位後台管理
+description: 訂位後台管理
+operationId: api.staff.queues.index
+parameters:
+  - in: query
+    description: 日期搜尋
+    name: date
+    schema:
+      type: string
+      example:
+        2024-01-24
+
+  - in: query
+    description: 電話搜尋
+    name: phone
+    schema:
+      type: string
+      example:
+        0912123123
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            data:
+              - created_at: 2024-01-24 12:00:00
+                seat: 2
+                queue_number: 321
+                check_in_at:
+                check_out_at:
+                no_show: false
+                booked_at: 2024-01-24 12:00:00
+
+              - created_at: 2024-01-24 12:00:00
+                seat: 4
+                queue_number: 123
+                check_in_at: 2024-01-24 12:00:00
+                check_out_at: 2024-01-24 12:10:00
+                no_show: false
+                booked_at: 2024-01-24 12:00:00
+            total: 2

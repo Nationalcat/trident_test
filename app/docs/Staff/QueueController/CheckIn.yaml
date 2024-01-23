@@ -1,0 +1,27 @@
+summary: 訂位報到
+description: 訂位報到
+operationId: api.staff.queues.check-in
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          phone:
+            type: integer
+            description: 排隊編號
+          table_id:
+            type: integer
+            description: 桌子編號
+        required:
+          - id
+          - table_id
+      example:
+        id: 123
+        table_id: 1
+responses:
+  '200':
+    description: ok
+  '400':
+    description: 座位數不足
+

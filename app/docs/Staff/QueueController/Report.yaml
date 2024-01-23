@@ -1,0 +1,41 @@
+tags:
+  - Staff API
+summary: 訂位後台報表
+description: 訂位後台報表
+operationId: api.staff.queues.report
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            from_online:
+              type: integer
+              description: 線上訂位數
+            from_site:
+              type: integer
+              description: 現場訂位數
+            avg_wait_reports:
+              type: array
+              description: 平均等待時間報表
+              items:
+                type: object
+                properties:
+                  started_hour:
+                    type: integer
+                    description: 時間區間（時）
+                  avg_wait_time:
+                    type: integer
+                    description: 平均等待時間(秒)
+          example:
+            from_online: 10
+            from_site: 2
+            avg_wait_reports:
+              - started_hour: 11
+                avg_wait_time: 10
+              - started_hour: 12
+                avg_wait_time: 15
+              - started_hour: 13
+                avg_wait_time: 12

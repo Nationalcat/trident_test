@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: trident_test
+  version: 1.0.0
+  license:
+    name: proprietary
+  description: swagger-cli bundle app/docs/docs-root.yaml --outfile docs.yaml --type yaml --dereference
+paths:
+  #=========[ Frontend API ]=========#
+  ## 訂位首頁
+  "/api/queues":
+    get:
+      $ref: ./Frontend/QueueController/Index.yaml
+    post:
+      $ref: ./Frontend/QueueController/Store.yaml
+  "/api/queues/{code}":
+    get:
+      $ref: ./Frontend/QueueController/Show.yaml
+  #=========[ Staff API ]=========#
+  "/api/staff/queues":
+    get:
+      $ref: ./Staff/QueueController/Index.yaml
+    post:
+      $ref: ./Staff/QueueController/Store.yaml
+  "/api/staff/queues/check-in":
+    put:
+      $ref: ./Staff/QueueController/CheckIn.yaml
+  "/api/staff/queues/check-out/tables/{id}":
+    put:
+      $ref: ./Staff/QueueController/CheckOut.yaml
+  "/api/staff/queues/report":
+    get:
+      $ref: ./Staff/QueueController/Report.yaml
+  ##-----[使用者相關]-----##
+  "/api/staff/phones":
+    get:
+      $ref: ./Staff/PhoneController/Index.yaml
+  "/api/staff/phones/block-phones":
+    put:
+      $ref: ./Staff/PhoneController/BlockPhones.yaml
+  "/api/staff/phones/unblock-phones":
+    put:
+      $ref: ./Staff/PhoneController/UnblockPhones.yaml
+

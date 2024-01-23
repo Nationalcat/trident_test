@@ -5,6 +5,10 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    'id' => [
+        'alphabet' => env('ID_ALPHABET', 'YtdumrB3shl5qjiSX8fWL2yxH6MzA0UDJcQGnRaCObPFZ7NIVK1Ewp9kTvoge4'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -70,7 +74,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Taipei',
 
     /*
     |--------------------------------------------------------------------------

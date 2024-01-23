@@ -1,0 +1,53 @@
+summary: 個人線上訂位
+description: 個人線上訂位
+operationId: api.queues.store
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+            description: 姓名
+          seat:
+            type: integer
+            description: 座位數
+          phone:
+            type: string
+            description: 手機號碼
+        required:
+          - name
+          - seat
+          - phone
+      example:
+        name: test
+        seat: 2
+        phone: 0912345678
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            seat:
+              type: integer
+              description: 座位數
+            your_number:
+              type: integer
+              description: 你的號碼
+            current_number:
+              type: integer
+              description: 現在號碼
+            queue_count:
+              type: integer
+              description: 前面排隊人數
+          example:
+            seat: 2
+            your_number: 30
+            current_number: 10
+            queue_count: 20
+  '400':
+    description: 爽約多次，請現場候位
