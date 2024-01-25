@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Staff;
 
+use App\Filters\Staff\QueueFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Staff\QueueController\CheckInRequest;
 use App\Http\Requests\Staff\QueueController\CreateRequest;
@@ -45,14 +46,7 @@ class QueueController extends Controller
                 ),
             ])
             // 需可查看每日所有取號紀錄
-            ->when($request->get('date'), fn($query) => $query
-                ->whereBetween('booked_at', [
-                    now()->parse($request->get('date'))->startOfDay(),
-                    now()->parse($request->get('date'))->endOfDay(),
-                ]))
-            ->when($request->get('phone'), fn($query) => $query
-                ->whereHas('phone', fn($query) => $query
-                    ->where('phone', $request->get('phone'))))
+            ->toFilter(new QueueFilter(), $request->all())
             ->orderByDesc('booked_at')
             ->paginate(min($request->get('per_page', 10), 50));
         $now = now();

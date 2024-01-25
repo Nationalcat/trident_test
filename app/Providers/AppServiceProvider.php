@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Filters\AbstractFilter;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Builder;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Builder::macro('toFilter',
+            fn(AbstractFilter $filter, array $queryStrings) => $filter->filterByDecorators($this, $queryStrings)
+        );
     }
 }
