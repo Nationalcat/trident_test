@@ -14,7 +14,6 @@ class Table extends Model
     protected $fillable = [
         'is_activated',
         'seat',
-        'size',
     ];
 
     protected $casts = [

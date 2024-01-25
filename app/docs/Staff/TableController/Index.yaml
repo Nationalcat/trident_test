@@ -1,0 +1,38 @@
+tags:
+  - Staff API
+summary: 桌子總覽
+description: 桌子總覽
+operationId: api.staff.tables.index
+parameters:
+  - in: query
+    description: 頁數
+    name: page
+    schema:
+      type: integer
+      example:
+        1
+
+  - in: query
+    description: 每頁頁數
+    name: per_page
+    schema:
+      type: integer
+      example:
+        10
+responses:
+  '200':
+    description: ok
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            data:
+              - id: 1
+                seat: 2
+                is_activated: true
+
+              - id: 2
+                seat: 2
+                is_activated: false
+            total: 2

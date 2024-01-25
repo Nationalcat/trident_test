@@ -1,0 +1,20 @@
+summary: 新增桌子
+description: 新增桌子
+operationId: api.staff.tables.store
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          seat:
+            type: integer
+            description: 座位數
+        required:
+          - seat
+      example:
+        seat: 2
+responses:
+  '200':
+    description: ok
+

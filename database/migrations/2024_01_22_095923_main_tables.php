@@ -56,7 +56,6 @@ return new class extends Migration {
             $table->dateTime('expired_at')->comment('逾期時間');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -67,5 +66,6 @@ return new class extends Migration {
         Schema::dropIfExists('queues');
         Schema::dropIfExists('tables');
         Schema::dropIfExists('phones');
+        Schema::dropIfExists('users');
     }
 };

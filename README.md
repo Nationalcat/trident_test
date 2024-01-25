@@ -1,6 +1,14 @@
 文件位置：
 `/docs.yaml`
 
+Initialization：
+
+```shell
+docker-compose up --build
+## web: 127.0.0.1:8888
+## mysql: mysql -u root -h 127.0.0.1 -P 33060 -D trident_test
+```
+
 ---
 Command:
 

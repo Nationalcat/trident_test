@@ -41,4 +41,12 @@ paths:
   "/api/staff/phones/unblock-phones":
     put:
       $ref: ./Staff/PhoneController/UnblockPhones.yaml
-
+  ##-----[桌子相關]-----##
+  "/api/staff/tables":
+    get:
+      $ref: ./Staff/TableController/Index.yaml
+    post:
+      $ref: ./Staff/TableController/Store.yaml
+  "/api/staff/tables/{id}/disable":
+    put:
+      $ref: ./Staff/TableController/Disable.yaml

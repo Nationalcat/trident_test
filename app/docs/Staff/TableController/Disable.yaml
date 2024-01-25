@@ -1,0 +1,14 @@
+summary: 關閉桌子
+description: 關閉桌子
+operationId: api.staff.tables.disable
+parameters:
+  - in: path
+    name: id
+    schema:
+      type: integer
+    required: true
+    description: 桌子編號
+responses:
+  '200':
+    description: ok
+
